@@ -34,6 +34,9 @@
     "sms_instructions": "Devotees who have sent donations to the bank account are kindly requested to SMS their details to: 8825877618, 9443994687",
     "qr_label": "YOGI TEMPLE AKKARAI",
     "contact_phone": "Phones: 8825877618, 9443994687",
+    "history_detailed": "According to the research of historian Mr. K.K. Pillai (1953), the temple's antiquity is documented by a copper plate inscription dated October 1445 (Ippasi 5). The temple was established as the northern spiritual boundary of Suchindrum during the construction of the main Thanumalayan Temple. Pandyan dynasty symbols (fish) on the ceilings prove its age across centuries.",
+    "traditions_title": "Ancient Traditions",
+    "traditions_text": "During the Margazhi festival, our community maintains the sacred tradition of providing sanctuary to the Lord and offering 'Panakaram' (jaggery water) to the thousands of devotees who accompany the divine procession.",
     "view_maps": "Open Google Maps"
   },
   "ta": {
@@ -71,6 +74,9 @@
     "sms_instructions": "வங்கி கணக்கிற்கு நன்கொடை அனுப்பிய பக்தர்கள் தங்கள் விவரங்களை கீழ்க்கண்ட ஏதேனும் ஒரு அலைபேசி எண்ணிற்கு குறுஞ்செய்தி மூலம் தெரிவிக்குமாறு அன்புடன் கேட்டுக்கொள்கிறோம். 8825877618, 9443994687",
     "qr_label": "YOGI TEMPLE AKKARAI",
     "contact_phone": "அலைபேசி: 8825877618, 9443994687",
+    "history_detailed": "வரலாற்று ஆய்வாளர் திரு. க.க. பிள்ளை அவர்கள் (1953) வெளியிட்ட ஆய்வுக் குறிப்பின்படி, 1445-ம் ஆண்டு (ஐப்பசி 5) தேதியிட்ட செப்புத்தகடு ஆவணம் மூலம் இத்தலம் 600 ஆண்டுகளுக்கு முன்னரே சிறப்புடன் விளங்கியது உறுதியாகிறது. சுசீந்திரம் மாநகரின் வடக்கு எல்லையாக இத்தலம் அமைக்கப்பட்டது. பாண்டிய மன்னர்களின் மீன் சின்னங்கள் இக்கோவிலின் தொன்மையை பறைசாற்றுகின்றன.",
+    "traditions_title": "பாரம்பரிய நிகழ்வுகள்",
+    "traditions_text": "மார்கழித் திருவிழாவின் போது சுசீந்திரம் வரும் பக்தர்களுக்கு 'பானகாரம்' வழங்கி உபசரிப்பதும், சுவாமிக்கு சிறப்பு மரியாதை செய்வதும் எமது சமுதாயத்தின் வழிவழி வந்த அறப்பணியாகும்.",
     "view_maps": "கூகுள் மேப்பில் பார்க்க"
   }
 }
