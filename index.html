@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Noto+Sans+Tamil:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase SDK (v9+ Compatibility) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 </head>
 <body>
     <header>
@@ -22,6 +26,8 @@
                 <li><a href="#history" data-key="nav_history">History</a></li>
                 <li><a href="#festivals" data-key="nav_festivals">Festivals</a></li>
                 <li><a href="#donations" data-key="nav_donations">Donations</a></li>
+                <li><button id="loginBtn" class="glass-btn" data-key="nav_login">Members Login</button></li>
+                <li><button id="logoutBtn" class="glass-btn hidden" data-key="nav_logout">Logout</button></li>
             </ul>
             <div class="lang-toggle">
                 <button id="toggleLang" class="glass-btn">TA / EN</button>
@@ -133,6 +139,44 @@
                 </div>
             </div>
         </section>
+        <!-- Members Only Portal (Hidden by default) -->
+        <section id="members-portal" class="section hidden">
+            <div class="container">
+                <div class="glass reveal" style="padding: 4rem; text-align: center;">
+                    <h2 data-key="members_title">Members Portal</h2>
+                    <p class="subtitle" data-key="members_welcome">Welcome to the private sanctuary for the community.</p>
+                    <div class="festivals-grid" style="margin-top: 3rem;">
+                        <div class="card glass">
+                            <h3 data-key="members_reports_title">📜 Reports</h3>
+                            <p data-key="members_reports_p">Community financial updates & trust reports.</p>
+                        </div>
+                        <div class="card glass">
+                            <h3 data-key="members_gallery_title">🖼️ Gallery</h3>
+                            <p data-key="members_gallery_p">Private collection of historical artifacts.</p>
+                        </div>
+                        <div class="card glass">
+                            <h3 data-key="members_directory_title">🤝 Directory</h3>
+                            <p data-key="members_directory_p">Connect with other community members.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Modal (Magic Link) -->
+        <div id="loginModal" class="modal hidden">
+            <div class="modal-content glass">
+                <span class="close-btn">&times;</span>
+                <h2 data-key="login_title">Members Access</h2>
+                <p data-key="login_p">Enter your email for a secure Magic Link.</p>
+                <form id="loginForm" style="margin-top: 2rem;">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required 
+                           style="width: 100%; padding: 1rem; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; color: white;">
+                    <button type="submit" id="sendLinkBtn" class="glass-btn" style="width: 100%; margin-top: 1rem;">Send Magic Link</button>
+                    <p id="authMessage" class="hidden" style="margin-top: 1rem; color: var(--accent);"></p>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -153,5 +197,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>

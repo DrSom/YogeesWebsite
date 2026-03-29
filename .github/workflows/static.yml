@@ -35,22 +35,16 @@ jobs:
       # ENVIRONMENT ROUTING: Dev -> dev.Yogees
       - name: Sync to Dev Repo
         if: github.ref == 'refs/heads/dev'
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ENV_DEPLOY_TOKEN }}
-          branch: master
-          repository: ${{ github.repository_owner }}/dev.Yogees
-          force: true
+        run: |
+          git remote add target https://x-access-token:${{ secrets.ENV_DEPLOY_TOKEN }}@github.com/${{ github.repository_owner }}/dev.Yogees.git
+          git push target dev:master --force
 
       # ENVIRONMENT ROUTING: Stage -> stage.Yogees
       - name: Sync to Stage Repo
         if: github.ref == 'refs/heads/stage'
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.ENV_DEPLOY_TOKEN }}
-          branch: master
-          repository: ${{ github.repository_owner }}/stage.Yogees
-          force: true
+        run: |
+          git remote add target https://x-access-token:${{ secrets.ENV_DEPLOY_TOKEN }}@github.com/${{ github.repository_owner }}/stage.Yogees.git
+          git push target stage:master --force
 
       # ARTIFACT GENERATION (Always for Pages sites)
       - name: Setup Pages
