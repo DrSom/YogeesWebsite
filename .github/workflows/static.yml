@@ -26,30 +26,31 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      # ENVIRONMENT ROUTING: Master -> Production
-      - name: Deploy to Prod (GitHub Pages)
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
-        uses: actions/deploy-pages@v4
-        id: deployment
-
       # ENVIRONMENT ROUTING: Dev -> dev.Yogees
       - name: Sync to Dev Repo
-        if: github.ref == 'refs/heads/dev'
+        if: github.ref_name == 'dev'
         run: |
-          git remote add target https://x-access-token:${{ secrets.ENV_DEPLOY_TOKEN }}@github.com/${{ github.repository_owner }}/dev.Yogees.git
-          git push target dev:master --force
+          git push https://${{ secrets.ENV_DEPLOY_TOKEN }}@github.com/${{ github.repository_owner }}/dev.Yogees.git dev:master --force
 
       # ENVIRONMENT ROUTING: Stage -> stage.Yogees
       - name: Sync to Stage Repo
-        if: github.ref == 'refs/heads/stage'
+        if: github.ref_name == 'stage'
         run: |
-          git remote add target https://x-access-token:${{ secrets.ENV_DEPLOY_TOKEN }}@github.com/${{ github.repository_owner }}/stage.Yogees.git
-          git push target stage:master --force
+          git push https://${{ secrets.ENV_DEPLOY_TOKEN }}@github.com/${{ github.repository_owner }}/stage.Yogees.git stage:master --force
 
       # ARTIFACT GENERATION (Always for Pages sites)
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        if: github.ref_name == 'master' || github.ref_name == 'main'
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
+        if: github.ref_name == 'master' || github.ref_name == 'main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
+
+      # ENVIRONMENT ROUTING: Master -> Production
+      - name: Deploy to Prod (GitHub Pages)
+        if: github.ref_name == 'master' || github.ref_name == 'main'
+        uses: actions/deploy-pages@v4
+        id: deployment
