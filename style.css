@@ -326,3 +326,39 @@ footer {
         justify-content: center;
     }
 }
+/* New Sections: History More & Traditions */
+.history-more {
+    margin-top: 4rem;
+    padding: 3rem;
+    position: relative;
+    border-left: 2px solid var(--accent);
+}
+
+.history-more p {
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--accent-light);
+    opacity: 0.9;
+}
+
+.traditions-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem;
+    position: relative;
+    border-top: 1px solid var(--glass-border);
+}
+
+.traditions-card p {
+    font-size: 1.2rem;
+    line-height: 2.2;
+}
+
+.traditions-card::before {
+    content: "📜";
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+}
